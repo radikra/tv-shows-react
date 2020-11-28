@@ -1,0 +1,145 @@
+@import '_null';
+
+@import '_vars';
+
+@import '_panel';
+
+@import '_date';
+
+@import '_programs';
+
+.app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+
+    overflow: hidden;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.widgets {
+    position: relative;
+
+    display: flex;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+
+.channels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: $light-txt;
+    background: $channels-bg;
+}
+
+.dates {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: $dark-txt;
+    background: $dates-bg;
+}
+
+@media screen and (max-width: 768px) {
+    .dates {
+        justify-content: flex-start;
+
+        padding: 5vh 5vw;
+    }
+}
+
+.disable-choose {
+    pointer-events: none;
+
+    filter: grayscale(100%);
+}
+
+.go-back {
+    font-size: 40px;
+
+    position: absolute;
+    top: 0;
+    left: 10px;
+
+    height: 50px;
+
+    cursor: pointer;
+
+    color: $contrast;
+    background: transparent;
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+
+    width: 300px;
+    margin-bottom: $radius*3;
+    padding: $radius $radius*2;
+
+    border-radius: $radius*1.5;
+    box-shadow: $neg-radius/2 $neg-radius/2 $radius/2 $ch-light-shadow,
+    $radius/2 $radius/2 $radius/2 $ch-dark-shadow;
+
+    &__back {
+        font-size: 3rem;
+
+        height: 50px;
+        margin-right: $radius;
+
+        cursor: pointer;
+
+        color: $contrast;
+        background: transparent;
+    }
+
+    &__logo {
+        width: 30px;
+        height: 30px;
+        margin-right: $radius;
+
+        border-radius: 50%;
+    }
+
+    &__title {
+        font-size: 3rem;
+
+        color: $hover-txt;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .desc {
+        width: 94vw;
+
+        &__title {
+            font-size: 2rem;
+
+            margin: 0 auto;
+        }
+
+        &__logo {
+            display: none;
+        }
+
+        &__back {
+            font-size: 4rem;
+
+            margin-right: $radius * 2;
+        }
+    }
+}

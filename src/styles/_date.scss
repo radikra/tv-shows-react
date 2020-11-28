@@ -1,0 +1,115 @@
+.date {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+
+    &__display {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 15px;
+
+        border-radius: 50%;
+        box-shadow: $neg-radius $neg-radius $radius $ch-light-shadow,
+        $radius $radius $radius $pr-dark-shadow;
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        top: 50%;
+
+        width: 20px;
+        height: 20px;
+
+        cursor: pointer;
+
+        border-bottom: 5px solid $contrast;
+        border-left: 5px solid $contrast;
+        background: transparent;
+    }
+
+    &__prev {
+        left: 0;
+
+        transform: translate(80%, -50%) rotate(45deg);
+
+        filter: drop-shadow(4px 0px 4px $dark-txt);
+    }
+
+    &__next {
+        right: 0;
+
+        transform: translate(-80%, -50%) rotate(-135deg);
+
+        filter: drop-shadow(-4px 0px 4px $dark-txt);
+    }
+
+    &__done {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+
+        width: 25px;
+        height: 17px;
+
+        cursor: pointer;
+        transform: translate(-30%, -100%) rotate(-45deg);
+
+        border-bottom: 5px solid $hover-txt;
+        border-left: 5px solid $hover-txt;
+        background: transparent;
+
+        filter: drop-shadow(-2px 2px 4px $dark-txt);
+    }
+
+    &__inside {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 120px;
+        height: 120px;
+
+        border-radius: 50%;
+        box-shadow: inset $neg-radius/2 $neg-radius/2 $radius/2 $ch-light-shadow,
+        inset $radius/2 $radius/2 $radius/2 $pr-dark-shadow;
+    }
+
+    &__numbers {
+        display: flex;
+        align-items: center;
+    }
+
+    &__prevnext {
+        font-size: 20px;
+
+        width: 25px;
+
+        text-align: center;
+
+        color: $prevnext-txt;
+    }
+
+    &__actual {
+        font-size: 35px;
+
+        width: 50px;
+
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .date {
+        margin: auto;
+    }
+}

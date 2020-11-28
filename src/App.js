@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { DataCapture } from './components/DataCapture'
+import { Programs } from './components/Programs'
+import './styles/main.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	state = {
+		channel: {},
+		date_from: '',
+		date_to: ''
+	}
+
+	getQueryParams = (channel, date_from, date_to) => {
+		this.setState({ channel, date_from, date_to })
+	}
+
+	clearQueryParams = () => {
+		this.setState({ channel: {} })
+	}
+
+	render () {
+		return (
+			<div className="app">
+				{ 
+					!this.state.channel.xvid 
+					? <DataCapture 
+							onClick={(channel, date_from, date_to) => this.getQueryParams(channel, date_from, date_to)}
+						/> 
+					: <Programs 
+							channel={this.state.channel}
+							date_from={this.state.date_from}
+							date_to={this.state.date_to}
+							onClick={() => this.clearQueryParams()}
+						/> 
+				}
+			</div>
+		)
+	}
 }
 
 export default App;

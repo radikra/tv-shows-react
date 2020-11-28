@@ -1,0 +1,103 @@
+.programs {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+
+    color: $dark-txt;
+    background: $programs-bg;
+
+    &__header {
+        display: flex;
+        align-items: center;
+
+        margin-bottom: $radius*3;
+    }
+
+    &__logo {
+        width: 4rem;
+        margin-right: 2rem;
+
+        border-radius: 50%;
+    }
+
+    &__title {
+        font-size: 4rem;
+    }
+
+    &__date {
+        align-self: flex-end;
+
+        margin-left: auto;
+    }
+
+    &__desc {
+        font-size: 1.5rem;
+        font-style: italic;
+
+        margin-bottom: $radius*2;
+    }
+
+    &__list {
+        overflow: auto;
+
+        width: 90vw;
+    }
+
+    &__item {
+        margin-bottom: $radius;
+        padding: $radius;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .programs {
+        &__header {
+            flex-direction: column;
+        }
+
+        &__logo {
+            margin-right: 0;
+        }
+
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__date {
+            align-self: center;
+
+            margin-left: 0;
+        }
+    }
+}
+
+.details {
+    display: flex;
+    align-items: center;
+
+    background: $program-bg;
+
+    &__desc {
+        font-size: 2rem;
+    }
+
+    &__icon {
+        max-width: 25px;
+        max-height: 25px;
+        margin-right: $radius;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .details {
+        &__desc {
+            font-size: 1.5rem;
+        }
+    }
+}

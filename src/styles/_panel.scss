@@ -1,0 +1,95 @@
+.panel {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 300px;
+    height: 550px;
+    padding: $radius;
+
+    border-radius: $radius;
+    background: $channels-bg;
+    box-shadow: $neg-radius $neg-radius $radius $ch-light-shadow,
+    $radius $radius $radius $ch-dark-shadow;
+
+    &__list {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        width: 320px;
+        height: 100%;
+        margin-left: 40px;
+        padding: $radius;
+
+        border-radius: $radius;
+    }
+
+    &__item {
+        width: 260px;
+        padding: $radius;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .panel {
+        width: 90vw;
+        height: 95vh;
+
+        &__list {
+            width: 92vw;
+            margin-left: 0;
+        }
+
+        &__item {
+            width: 85vw;
+        }
+    }
+}
+
+.channel {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+    text-align: initial;
+
+    border-radius: $radius;
+    outline: none;
+    background: inherit;
+    box-shadow: $neg-radius/2 $neg-radius/2 $radius/2 $ch-light-shadow,
+    $radius/2 $radius/2 $radius/2 $ch-dark-shadow;
+
+    &:active {
+        outline: none;
+        box-shadow: $neg-radius/2 $neg-radius/2 $radius/2 $ch-light-shadow,
+        $radius/2 $radius/2 $radius/2 $ch-dark-shadow,
+        inset $neg-radius/2 $neg-radius/2 $radius/2 $ch-light-shadow,
+        inset $radius/2 $radius/2 $radius/2 $ch-dark-shadow;
+    }
+
+    &__logo {
+        display: block;
+        overflow: hidden;
+
+        max-width: 40px;
+        margin-right: 15px;
+
+        border-radius: 50%;
+    }
+
+    &__title {
+        font-size: 14px;
+
+        color: $light-txt;
+
+        &:hover {
+            color: $hover-txt;
+        }
+    }
+}
